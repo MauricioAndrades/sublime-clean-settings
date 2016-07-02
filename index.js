@@ -84,7 +84,7 @@ function cleanConcat(options) {
       }
     }
     cb();
-  })).pipe(process.stdout); /*.pipe(fs.createWriteStream(fileoutput=path.reolve(options)))*/
+  })).pipe(process.stdout); /*.pipe(fs.createWriteStream(fileoutput=path.resolve(options)))*/
 }
 
 commander
