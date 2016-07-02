@@ -7,7 +7,7 @@ var through2 = require('through2');
 var split = require('split');
 const StringDecoder = require('string_decoder').StringDecoder;
 const decoder = new StringDecoder('utf8');
-var tc = require('through2-concat');
+
 const f = {
   readstream: (path) => {
     fs.createReadStream(path, {
