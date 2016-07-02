@@ -84,7 +84,9 @@ to this:
 
 You need node. Install node if you don't have node.
 
-`clone this repo`, `npm install` and create an alias in your shell to run this script with node, like...:
+`clone this repo`, cd into cloned location and `npm install`.
+    
+Create an alias in your shell to run this script with node, like...:
 `alias clean_sublime_settings="node /path/to/this/repo's/index.js"`
 
 ## Command
@@ -93,7 +95,7 @@ You need node. Install node if you don't have node.
 
 run command like 
 ```bash
-  # or whatever your alias is... -i...
+  # or whatever your alias is... -i path/to/file.sublime-settings
   clean_sublime_settings -i '/path/to/file.sublime-settings'
 ```
 
@@ -101,7 +103,7 @@ will pipe uncommented and unprettyfied version of sublime-settings file to proce
 
 ## PrettyOutput
 
-If you want prettyoutput let me know and I'll modify the script. Or install `jq` with `brew` and and pipe to it like...
+If you want pretty output let me know and I'll modify the script. Or install `jq` with `brew` and and pipe to it like...
 
 ```bash
 clean_sublime_settings -i ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings|jq . -S
@@ -113,11 +115,11 @@ If you want to batch process all your settings file, you could do something like
 
 ```bash
 $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/;
-$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; cleansublime -i "$line"; done
+$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; clean_sublime_settings -i "$line"; done
 ```
 
 or pipe pretty print it with `jq` like:
 ```bash
 $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/;
-$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; cleansublime -i "$line"; done
+$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; clean_sublime_settings -i "$line"; done
 ```
