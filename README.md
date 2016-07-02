@@ -81,6 +81,9 @@ to this:
 
 
 ## Installation
+
+You need node. Install node if you don't have node.
+
 `clone this repo`, `npm install` and create an alias in your shell to run this script with node, like...:
 `alias clean_sublime_settings="node /path/to/this/repo's/index.js"`
 
