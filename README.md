@@ -121,5 +121,5 @@ $ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$lin
 or pipe pretty print it with `jq` like:
 ```bash
 $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/;
-$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; clean_sublime_settings -i "$line"; done
+$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; clean_sublime_settings -i "$line"| jq -S ; done
 ```
