@@ -86,11 +86,12 @@ to this:
 
 ## Command
 
-`-i /path/to/file.sublime-settings`
+`clean_sublime_settings -i /path/to/file.sublime-settings`
 
 run command like 
-```shell
-  cean_sublime_settings -i '/path/to/file.sublime-settings'
+```bash
+  # or whatever your alias is... -i...
+  clean_sublime_settings -i '/path/to/file.sublime-settings'
 ```
 
 will pipe uncommented and unprettyfied version of sublime-settings file to process.stdout.
