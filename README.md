@@ -100,7 +100,21 @@ will pipe uncommented and unprettyfied version of sublime-settings file to proce
 
 If you want prettyoutput let me know and I'll modify the script. Or install `jq` with `brew` and and pipe to it like...
 
-```shell
-cleansublime -i ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings|jq . -S
+```bash
+clean_sublime_settings -i ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings|jq . -S
 ```
 
+## multiple files
+
+If you want to batch process all your settings file, you could do something like this...
+
+```bash
+$ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/;
+$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; cleansublime -i "$line"; done
+```
+
+or pipe pretty print it with `jq` like:
+```bash
+$ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/;
+$ find . -iname '*.sublime-settings' | while read line; do echo "\n---------$line"; cleansublime -i "$line"; done
+```
